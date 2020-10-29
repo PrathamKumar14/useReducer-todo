@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  color: #e11d74;
+}
+
+h2 {
+  display: inline-block;
+  width: 180px;
+  margin: 0;
+  text-align: left;
+}
+
+button {
+  height: 32px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 4px;
+  color: black;
+  cursor: pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  background: white;
+}
+
+input {
+  border: 2px solid black;
+  width: 300px;
+  height: 40px;
+  border-radius: 14px;
+  font-size: 1rem;
+  padding: 0 8px;
+}
