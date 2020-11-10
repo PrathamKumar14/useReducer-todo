@@ -6,6 +6,7 @@ export const ACTIONS = {
   ADD_TODO: "add-todo",
   TOGGLE_TODO: "toggle-todo",
   DELETE_TODO: "delete-todo",
+  PRIORITY_TODO: "priority-todo",
 };
 
 function reducer(todos, action) {
@@ -19,6 +20,13 @@ function reducer(todos, action) {
         }
         return todo;
       });
+    case ACTIONS.PRIORITY_TODO:
+      return todos.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return { ...todo, priority: !todo.priority };
+        }
+        return todo;
+      });
     case ACTIONS.DELETE_TODO:
       return todos.filter((todo) => todo.id !== action.payload.id);
     default:
@@ -27,7 +35,7 @@ function reducer(todos, action) {
 }
 
 function newTodo(name) {
-  return { id: Date.now(), name: name, complete: false };
+  return { id: Date.now(), name: name, complete: false, priority: false };
 }
 
 function App() {
